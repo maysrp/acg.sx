@@ -1,0 +1,23 @@
+<form name="form1" action="" method="get">
+	<input type="text" name="nam">
+	<input type="submit">
+	<a href="#" onClick="uu();">[检测用户名]</a> </td>
+
+<form>
+	<script type="text/javascript">
+	function addd(url){
+		var ajax=new XMLHttpRequest();
+		ajax.open("GET",url);
+		ajax.send();
+		ajax.onreadystatechange=function(){
+			if (ajax.readyState===4 && ajax.status===200) {
+				alert(ajax.responseText);
+			};
+		}
+	}
+	function uu(){
+		var url=form1.nam.value;
+		addd('get.php?aa='+url+'&nocache='+new Date().getTime());
+	}
+
+	</script>
